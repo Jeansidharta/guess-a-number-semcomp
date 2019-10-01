@@ -4,7 +4,7 @@ export default function End({match, history}){
 	const number = match.params.number;
 
 	function reset(){
-		history.push("/home");
+		history.push("/");
 	}
 
 	return (

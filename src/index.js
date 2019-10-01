@@ -10,9 +10,9 @@ import "./index.css";
 function App(){
 	return (
 		<BrowserRouter>
-			<Route path="/home" component={Home}/>
 			<Route path="/game/:number" component={Game}/>
 			<Route path="/end/:number" component={End}/>
+			<Route path="/" component={Home} exact/>
 		</BrowserRouter>
 	);
 }
