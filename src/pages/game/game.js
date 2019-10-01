@@ -1,9 +1,9 @@
 import React from "react";
 
-let tries = 0;
 export default function Game({match, history}){
 	let [floor, setFloor] = React.useState(10);
-	let [ceil, setCeil] = React.useState(100);
+  let [ceil, setCeil] = React.useState(100);
+  
 	const [guessNumber, setGuessNumber] = React.useState(
 		Math.floor(Math.random() * (ceil - floor) + floor)
 	);
@@ -17,7 +17,7 @@ export default function Game({match, history}){
 		setFloor(guessNumber + 1);
 		floor = guessNumber + 1;
 		const newNumber = Math.floor(Math.random() * (ceil - floor) + floor);
-		if(newNumber == number){
+		if(newNumber === number){
 			history.push("/end/" + number);
 			return;
 		}
@@ -32,7 +32,7 @@ export default function Game({match, history}){
 		setCeil(guessNumber - 1);
 		ceil = guessNumber - 1;
 		const newNumber = Math.floor(Math.random() * (ceil - floor) + floor);
-		if(newNumber == number){
+		if(newNumber === number){
 			history.push("/end/" + number);
 			return;
 		}
@@ -41,12 +41,9 @@ export default function Game({match, history}){
 
 	return (
 		<main>
-			<h1>Game</h1>
-			<p>
-				I just guessed {guessNumber}. Is your number bigger or smaller?
-			</p>
-			<button onClick={clickBigger}>Bigger</button>
-			<button onClick={clickSmaller}>Smaller</button>
+			<h1>Eu acho que o número é {guessNumber}. Ele é maior ou menor que {guessNumber}?</h1>
+			<button onClick={clickBigger}>Maior</button>
+			<button onClick={clickSmaller}>Menor</button>
 		</main>
 	);
 }
