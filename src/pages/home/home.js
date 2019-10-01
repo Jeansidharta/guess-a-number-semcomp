@@ -14,7 +14,7 @@ export default function Home({history}){
 			<h1>Bem Vindx!</h1>
 			<form onSubmit={submit}>
 				<label>Me dê um número entre 10 e 100</label>
-				<input ref={inputRef} type="number" min="10" max="100" required="true" />
+				<input ref={inputRef} type="number" min="10" max="100" required />
 				<button type="submit">Send</button>
 			</form>
 		</main>

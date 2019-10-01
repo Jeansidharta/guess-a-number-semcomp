@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Game({match, history}){
 	let [floor, setFloor] = React.useState(10);
-  let [ceil, setCeil] = React.useState(100);
-  
+	let [ceil, setCeil] = React.useState(100);
+
 	const [guessNumber, setGuessNumber] = React.useState(
 		Math.floor(Math.random() * (ceil - floor) + floor)
 	);
-	const number = match.params.id;
+	const number = parseInt(match.params.number);
 
 	function clickBigger(){
 		if(guessNumber > number){
@@ -15,8 +15,8 @@ export default function Game({match, history}){
 			return;
 		}
 		setFloor(guessNumber + 1);
-		floor = guessNumber + 1;
-		const newNumber = Math.floor(Math.random() * (ceil - floor) + floor);
+		let newFloor = guessNumber + 1;
+		const newNumber = Math.floor(Math.random() * (ceil - newFloor) + newFloor);
 		if(newNumber === number){
 			history.push("/end/" + number);
 			return;
@@ -30,8 +30,8 @@ export default function Game({match, history}){
 			return;
 		}
 		setCeil(guessNumber - 1);
-		ceil = guessNumber - 1;
-		const newNumber = Math.floor(Math.random() * (ceil - floor) + floor);
+		let newCeil = guessNumber - 1;
+		const newNumber = Math.floor(Math.random() * (newCeil - floor) + floor);
 		if(newNumber === number){
 			history.push("/end/" + number);
 			return;

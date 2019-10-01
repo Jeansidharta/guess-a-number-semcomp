@@ -12,8 +12,8 @@ function App(){
 		<BrowserRouter>
 			<Switch>
 				<Route path="/home" component={Home}/>
-				<Route path="/game/:id" component={Game}/>
-				<Route path="/end/:id" component={End}/>
+				<Route path="/game/:number" component={Game}/>
+				<Route path="/end/:number" component={End}/>
 				<Redirect to="/home"/>
 			</Switch>
 		</BrowserRouter>
