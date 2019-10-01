@@ -5,6 +5,8 @@ import Game from "./pages/game/game";
 import End from "./pages/end/end";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+import "./index.css";
+
 function App(){
 	return (
 		<BrowserRouter>
